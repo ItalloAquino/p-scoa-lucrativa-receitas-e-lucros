@@ -33,24 +33,18 @@ const HeroSection = () => {
           </span>
         </div>
 
-        {/* Course mockup */}
-        <div className="mt-12 max-w-lg mx-auto">
+        {/* Vertical Video Embed */}
+        <div className="mt-12 max-w-[320px] mx-auto">
           <div className="bg-chocolate-medium rounded-xl p-3 shadow-2xl border border-gold/20">
-            <div className="bg-cream rounded-lg aspect-video flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent" />
-              <div className="text-center relative z-10">
-                <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-cta-gradient flex items-center justify-center shadow-cta">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <path d="M8 5v14l11-7z" fill="white" />
-                  </svg>
-                </div>
-                <p className="text-chocolate font-display font-bold text-lg">Páscoa Lucrativa</p>
-                <p className="text-chocolate/60 font-body text-sm">10 vídeo-aulas exclusivas</p>
-              </div>
-              {/* Decorative eggs */}
-              <div className="absolute bottom-2 left-4 w-8 h-10 rounded-full bg-gold/30 rotate-12" />
-              <div className="absolute bottom-4 right-6 w-6 h-8 rounded-full bg-cta-orange/20 -rotate-6" />
-              <div className="absolute top-4 right-8 w-5 h-7 rounded-full bg-chocolate/10 rotate-20" />
+            <div className="bg-black rounded-lg overflow-hidden relative" style={{ padding: "177.78% 0 0 0" }}>
+              <iframe
+                src="https://player.vimeo.com/video/1169377949?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                title="New Project"
+              ></iframe>
             </div>
           </div>
         </div>

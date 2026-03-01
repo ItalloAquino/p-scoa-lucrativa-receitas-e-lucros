@@ -3,14 +3,14 @@ import CTAButton from "./CTAButton";
 
 const FinalCTASection = () => {
   return (
-    <section className="bg-dark-gradient section-padding">
+    <section className="bg-cream-dark section-padding">
       <div className="container-narrow text-center">
         {/* Scarcity banner */}
-        <div className="bg-[#CC0000] text-white font-bold text-sm sm:text-base py-3 px-4 rounded-t-xl mb-0 max-w-lg mx-auto">
+        <div className="bg-[#CC0000] text-white font-bold text-sm sm:text-base py-3 px-4 rounded-t-xl mb-0 max-w-lg mx-auto shadow-lg relative z-20">
           🔴 Restam apenas 10 vagas com este preço
         </div>
 
-        <div className="max-w-lg mx-auto bg-chocolate-medium rounded-b-xl p-8 border border-gold/20 mb-6">
+        <div className="max-w-lg mx-auto bg-chocolate-medium rounded-b-xl p-8 border border-gold/20 mb-6 shadow-2xl relative z-10">
           <h3 className="text-cream font-display text-xl sm:text-2xl font-bold mb-2">
             Garanta seu acesso agora
           </h3>

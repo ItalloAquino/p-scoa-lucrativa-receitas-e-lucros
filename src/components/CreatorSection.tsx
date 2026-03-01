@@ -7,11 +7,17 @@ const CreatorSection = () => {
         </h2>
 
         <div className="flex flex-col items-center text-center max-w-xl mx-auto">
-          <div className="w-24 h-24 rounded-full bg-gold flex items-center justify-center text-primary-foreground font-display font-bold text-2xl mb-6 ring-4 ring-gold/30">
-            AS
+          <div className="w-28 h-28 rounded-full mb-6 ring-4 ring-gold/30 overflow-hidden shadow-lg">
+            <img
+              src="https://i.ibb.co/tPNBH8Xj/PAOLA-RAMOS-02.jpg"
+              alt="Paola Ramos"
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <p className="text-foreground/80 font-body text-base sm:text-lg leading-relaxed">
-            <strong className="text-chocolate">Ana Souza</strong> faz ovos de Páscoa há 5 anos e
+            <strong className="text-chocolate">Paola Ramos</strong> faz ovos de Páscoa há 5 anos e
             transformou a confeitaria em sua principal fonte de renda. Hoje ensina outras
             mulheres a fazer o mesmo com um método simples, direto e testado. Sua missão é provar
             que qualquer mulher pode começar a lucrar com chocolate — mesmo sem experiência
