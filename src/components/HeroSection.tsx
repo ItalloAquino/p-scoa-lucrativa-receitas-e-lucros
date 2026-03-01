@@ -16,7 +16,7 @@ const HeroSection = () => {
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-cream/80 mb-8 max-w-2xl mx-auto font-body leading-relaxed">
-          10 receitas exclusivas em vídeo, do básico ao gourmet, para você vender do seu próprio lar — mesmo sem experiência
+          10 receitas secretas e exclusivas em vídeo, do básico ao gourmet, para você vender do seu próprio lar — mesmo sem experiência
         </p>
 
         <CTAButton />
