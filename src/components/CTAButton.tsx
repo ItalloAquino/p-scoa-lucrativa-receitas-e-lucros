@@ -2,9 +2,10 @@ import { toast } from "sonner";
 
 const CTAButton = () => {
   const handleClick = () => {
-    toast.success("🎉 Você será redirecionada para a página de pagamento!", {
-      description: "Esta é uma demonstração — nenhuma compra será realizada.",
-    });
+    const element = document.getElementById("pricing-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (

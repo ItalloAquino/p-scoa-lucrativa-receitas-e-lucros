@@ -26,7 +26,6 @@ const Index = () => {
       <CreatorSection />
       <IncludedSection />
       <GuaranteeSection />
-      <FinalCTASection />
       <FAQSection />
       <FooterSection />
       <SocialProofPopup />
