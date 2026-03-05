@@ -2,12 +2,12 @@ import { Check } from "lucide-react";
 import CTAButton from "./CTAButton";
 
 const items = [
-  "10 vídeo-aulas completas em HD",
+  "+10 vídeo-aulas completas em HD",
   "Acesso imediato pela área de membros",
-  "Lista de fornecedores com preços atualizados",
-  "Planilha de precificação editável",
+  "As melhores técnicas para você lucrar",
+  "Segredos de quem tem experiência",
   "Grupo de suporte exclusivo para alunas",
-  "Bônus: Guia de embalagens que vendem",
+  "Bônus: Lista com os melhores fornecedores",
 ];
 
 const paymentMethods = [
@@ -62,7 +62,7 @@ const IncludedSection = () => {
               R$27,00
             </div>
             <p className="text-sm mt-2 opacity-90">
-              ou 12x R$ 2,70 no cartão
+              ou 3x R$ 9,64 no cartão
             </p>
           </div>
 

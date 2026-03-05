@@ -23,7 +23,7 @@ const FinalCTASection = () => {
             R$<span>27</span>
           </p>
           <p className="text-cream/60 font-body text-sm mb-8">
-            ou 12x de R$2,70 no cartão
+            ou 3x de R$9,64 no cartão
           </p>
 
           <CTAButton />

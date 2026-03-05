@@ -17,7 +17,7 @@ const SolutionSection = () => {
 
         <div className="mt-10 flex justify-center gap-6 flex-wrap">
           {[
-            { number: "10", label: "Vídeo-aulas" },
+            { number: "+10", label: "receitas em vídeo" },
             { number: "500+", label: "Alunas" },
             { number: "R$2.000", label: "Potencial de lucro" },
           ].map((stat, i) => (

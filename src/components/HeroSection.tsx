@@ -10,13 +10,12 @@ const HeroSection = () => {
 
       <div className="container-narrow relative z-10 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6">
-          Aprenda a Fazer Ovos de Páscoa Gourmet em Casa e{" "}
-          <span className="text-gold-light">Lucre R$800 a R$2.000</span>{" "}
-          Nesta Páscoa
+          Não São Receitas Qualquer.{" "}
+          <span className="text-gold-light">São as Que Geram R$800 a R$2.000 Nessa Páscoa</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-cream/80 mb-8 max-w-2xl mx-auto font-body leading-relaxed">
-          10 receitas secretas e exclusivas em vídeo, do básico ao gourmet, para você vender do seu próprio lar — mesmo sem experiência
+          Um pack exclusivo com mais de 10 receitas gourmet mais lucrativas da temporada — do básico ao sofisticado — para você produzir em casa, encantar clientes e lucrar de verdade. Mesmo começando do zero.
         </p>
 
         <CTAButton />
