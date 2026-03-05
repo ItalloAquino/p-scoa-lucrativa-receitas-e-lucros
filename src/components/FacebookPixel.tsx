@@ -1,6 +1,9 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const FacebookPixel = () => {
+    const location = useLocation();
+
     useEffect(() => {
         const PIXEL_ID = "907951455286362";
 
@@ -24,8 +27,13 @@ const FacebookPixel = () => {
             })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js", undefined, undefined, undefined);
             (window as any).fbq("init", PIXEL_ID);
         }
-        (window as any).fbq("track", "PageView");
     }, []);
+
+    useEffect(() => {
+        if ((window as any).fbq) {
+            (window as any).fbq("track", "PageView");
+        }
+    }, [location]);
 
     return null;
 };
