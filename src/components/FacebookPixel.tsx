@@ -26,12 +26,25 @@ const FacebookPixel = () => {
                 s.parentNode.insertBefore(t, s);
             })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js", undefined, undefined, undefined);
             (window as any).fbq("init", PIXEL_ID);
+            console.log("Facebook Pixel Initialized:", PIXEL_ID);
         }
     }, []);
 
     useEffect(() => {
         if ((window as any).fbq) {
             (window as any).fbq("track", "PageView");
+            console.log("Facebook Pixel: PageView event tracked for", location.pathname);
+
+            // Diagnostic: Force Purchase event if URL has ?activate=purchase
+            const params = new URLSearchParams(window.location.search);
+            if (params.get("activate") === "purchase") {
+                (window as any).fbq("track", "Purchase", {
+                    value: 27.00,
+                    currency: "BRL",
+                    content_name: "DIAGNOSTIC_PURCHASE_ACTIVATION"
+                });
+                console.log("Facebook Pixel: DIAGNOSTIC Purchase event fired!");
+            }
         }
     }, [location]);
 

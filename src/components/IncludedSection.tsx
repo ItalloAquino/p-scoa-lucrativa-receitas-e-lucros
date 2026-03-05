@@ -17,6 +17,17 @@ const paymentMethods = [
 
 const IncludedSection = () => {
   const handleCTA = () => {
+    // Track InitiateCheckout event
+    if ((window as any).fbq) {
+      (window as any).fbq("track", "InitiateCheckout", {
+        content_name: "Páscoa Lucrativa",
+        content_category: "Ebook/Course",
+        value: 27.00,
+        currency: "BRL"
+      });
+      console.log("Facebook Pixel: InitiateCheckout event tracked");
+    }
+
     window.open("https://pay.hotmart.com/W104712605V?checkoutMode=10", "_blank");
   };
 

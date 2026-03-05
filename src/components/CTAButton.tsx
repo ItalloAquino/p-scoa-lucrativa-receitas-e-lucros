@@ -2,6 +2,14 @@ import { toast } from "sonner";
 
 const CTAButton = () => {
   const handleClick = () => {
+    // Track Interest/Scroll
+    if ((window as any).fbq) {
+      (window as any).fbq("trackCustom", "ClickToOffer", {
+        button_location: "Hero/CTA"
+      });
+      console.log("Facebook Pixel: ClickToOffer event tracked");
+    }
+
     const element = document.getElementById("pricing-section");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
