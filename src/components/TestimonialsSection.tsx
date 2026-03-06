@@ -36,13 +36,15 @@ const TestimonialsSection = () => {
               className="bg-cream-dark rounded-xl p-6 shadow-card border border-border"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-gold/20 flex-shrink-0">
+                <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-gold/20 flex-shrink-0 bg-gray-100">
                   <img
                     src={t.image}
                     alt={t.name}
                     className="w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
+                    width="48"
+                    height="48"
                   />
                 </div>
                 <div>

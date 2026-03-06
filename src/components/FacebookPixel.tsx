@@ -7,27 +7,31 @@ const FacebookPixel = () => {
     useEffect(() => {
         const PIXEL_ID = "907951455286362";
 
-        // Initialize Facebook Pixel if not already initialized
-        if (!(window as any).fbq) {
-            (function (f: any, b: any, e: any, v: any, n: any, t: any, s: any) {
-                if (f.fbq) return;
-                n = f.fbq = function () {
-                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = "2.0";
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s);
-            })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js", undefined, undefined, undefined);
-            (window as any).fbq("init", PIXEL_ID);
-            console.log("Facebook Pixel Initialized:", PIXEL_ID);
-        }
+        // Initialize Facebook Pixel with a slight delay to prioritize critical rendering
+        const initTimeout = setTimeout(() => {
+            if (!(window as any).fbq) {
+                (function (f: any, b: any, e: any, v: any, n: any, t: any, s: any) {
+                    if (f.fbq) return;
+                    n = f.fbq = function () {
+                        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                    };
+                    if (!f._fbq) f._fbq = n;
+                    n.push = n;
+                    n.loaded = !0;
+                    n.version = "2.0";
+                    n.queue = [];
+                    t = b.createElement(e);
+                    t.async = !0;
+                    t.src = v;
+                    s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s);
+                })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js", undefined, undefined, undefined);
+                (window as any).fbq("init", PIXEL_ID);
+                console.log("Facebook Pixel Initialized (delayed):", PIXEL_ID);
+            }
+        }, 2000); // 2 seconds delay
+
+        return () => clearTimeout(initTimeout);
     }, []);
 
     useEffect(() => {
