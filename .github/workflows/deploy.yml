@@ -1,4 +1,4 @@
-name: Deploy para KingHost
+name: Build e Deploy para KingHost
 
 on:
   push:
@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Instala dependências
         run: npm install
@@ -19,24 +21,10 @@ jobs:
       - name: Build do projeto
         run: npm run build
 
-      - name: Instala lftp
-        run: sudo apt-get install -y lftp
-
-      - name: Debug FTP
+      - name: Commit do dist
         run: |
-          ftp -inv ${{ secrets.FTP_SERVER }} << EOF
-          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
-          pwd
-          ls
-          bye
-          EOF
-
-      - name: Deploy via FTP
-        run: |
-          lftp -e "
-            set ssl:verify-certificate no;
-            set ftp:passive-mode yes;
-            open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-            mirror -R --delete --verbose ./dist/ www/;
-            quit
-          "
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add dist/ -f
+          git commit -m "build: atualiza dist [skip ci]" || echo "Nada para commitar"
+          git push
