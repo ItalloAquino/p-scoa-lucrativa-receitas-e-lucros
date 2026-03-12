@@ -38,6 +38,6 @@ jobs:
             set ssl:verify-certificate no;
             set ftp:passive-mode yes;
             open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-            mirror -R --delete --verbose ./dist/ Www/;
+            mirror -R --delete --verbose ./dist/ www/;
             quit
           "
