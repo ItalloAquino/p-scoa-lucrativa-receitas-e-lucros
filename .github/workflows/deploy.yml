@@ -22,15 +22,14 @@ jobs:
       - name: Instala lftp
         run: sudo apt-get install -y lftp
 
-      - name: Lista pastas no FTP
+      - name: Debug FTP
         run: |
-          lftp -e "
-            set ssl:verify-certificate no;
-            set ftp:passive-mode yes;
-            open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-            ls -la;
-            quit
-          "
+          ftp -inv ${{ secrets.FTP_SERVER }} << EOF
+          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
+          pwd
+          ls
+          bye
+          EOF
 
       - name: Deploy via FTP
         run: |
