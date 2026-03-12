@@ -1,6 +1,7 @@
 /**
  * Site Configuration
  * Centralizing all domain-specific and integration-specific constants.
+ * [Build Trigger: Production Branch Strategy]
  */
 
 export const SITE_CONFIG = {
