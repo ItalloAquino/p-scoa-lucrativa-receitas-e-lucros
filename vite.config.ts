@@ -28,8 +28,12 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
 
+# MIME types
 AddType application/javascript .js .mjs
-AddType text/css .css`.trim()
+AddType text/css .css
+AddType image/svg+xml .svg
+AddType image/x-icon .ico
+AddType application/json .json`.trim()
         );
         console.log("Root .htaccess generated.");
 
