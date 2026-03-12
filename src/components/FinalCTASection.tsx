@@ -1,5 +1,6 @@
 import { CreditCard, Lock, QrCode, Receipt } from "lucide-react";
 import CTAButton from "./CTAButton";
+import { SITE_CONFIG } from "@/config/site";
 
 const FinalCTASection = () => {
   return (
@@ -48,7 +49,7 @@ const FinalCTASection = () => {
         {/* Pix notice */}
         <div className="max-w-lg mx-auto bg-[#FFFBEA] border border-yellow-300 rounded-xl px-5 py-4 text-center">
           <p className="text-gray-700 font-body text-[13px] leading-relaxed">
-            ℹ️ O Pix será identificado no nome de <strong>ITALLO FERNANDES AQUINO</strong>, responsável financeiro do Páscoa Lucrativa.
+            ℹ️ O Pix será identificado no nome de <strong>{SITE_CONFIG.responsibleParty}</strong>, responsável financeiro do Páscoa Lucrativa.
           </p>
         </div>
       </div>

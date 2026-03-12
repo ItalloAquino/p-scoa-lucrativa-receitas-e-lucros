@@ -1,9 +1,11 @@
+import { SITE_CONFIG } from "@/config/site";
+
 const FooterSection = () => {
   return (
     <footer className="bg-chocolate py-10 px-4">
       <div className="container-narrow text-center">
         <p className="text-cream/60 font-body text-sm mb-3">
-          © 2025 Páscoa Lucrativa — Todos os direitos reservados.
+          © {new Date().getFullYear()} {SITE_CONFIG.title.split(" — ")[0]} — Todos os direitos reservados.
         </p>
         <div className="flex items-center justify-center gap-4 mb-4">
           <button className="text-cream/40 font-body text-xs hover:text-cream/60 transition-colors underline">

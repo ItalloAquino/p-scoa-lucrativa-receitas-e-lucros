@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from "@/config/site";
+
 const SolutionSection = () => {
   return (
     <section className="bg-cream-dark section-padding">
@@ -6,7 +8,7 @@ const SolutionSection = () => {
           A solução
         </p>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-chocolate mb-6">
-          Apresentando o <span className="text-gold">Páscoa Lucrativa</span>
+          Apresentando o <span className="text-gold">{SITE_CONFIG.title.split(" — ")[0]}</span>
         </h2>
         <p className="text-foreground/80 font-body text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
           Um método completo para você sair do zero, receber pedidos reais, ter confiança na

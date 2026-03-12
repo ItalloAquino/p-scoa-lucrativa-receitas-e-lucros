@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { SITE_CONFIG } from "@/config/site";
 
 const FacebookPixel = () => {
     const location = useLocation();
 
     useEffect(() => {
-        const PIXEL_ID = "907951455286362";
+        const PIXEL_ID = SITE_CONFIG.facebookPixelId;
 
         // Initialize Facebook Pixel with a slight delay to prioritize critical rendering
         const initTimeout = setTimeout(() => {

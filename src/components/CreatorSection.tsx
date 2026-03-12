@@ -1,9 +1,11 @@
+import { SITE_CONFIG } from "@/config/site";
+
 const CreatorSection = () => {
   return (
     <section className="bg-cream-dark section-padding">
       <div className="container-narrow">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-chocolate text-center mb-10">
-          Quem está por trás do <span className="text-gold">Páscoa Lucrativa</span>
+          Quem está por trás do <span className="text-gold">{SITE_CONFIG.title.split(" — ")[0]}</span>
         </h2>
 
         <div className="flex flex-col items-center text-center max-w-xl mx-auto">

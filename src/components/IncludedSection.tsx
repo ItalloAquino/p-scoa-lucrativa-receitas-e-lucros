@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import CTAButton from "./CTAButton";
+import { SITE_CONFIG } from "@/config/site";
 
 const items = [
   "+10 vídeo-aulas completas em HD",
@@ -20,7 +21,7 @@ const IncludedSection = () => {
     // Track InitiateCheckout event
     if ((window as any).fbq) {
       (window as any).fbq("track", "InitiateCheckout", {
-        content_name: "Páscoa Lucrativa",
+        content_name: SITE_CONFIG.title,
         content_category: "Ebook/Course",
         value: 27.00,
         currency: "BRL"
@@ -28,7 +29,7 @@ const IncludedSection = () => {
       console.log("Facebook Pixel: InitiateCheckout event tracked");
     }
 
-    window.open("https://pay.hotmart.com/W104712605V?checkoutMode=10", "_blank");
+    window.open(SITE_CONFIG.hotmartCheckoutUrl, "_blank");
   };
 
   return (
@@ -107,7 +108,7 @@ const IncludedSection = () => {
         {/* Mensagem de Segurança */}
         <div className="mt-8 text-center px-4">
           <p className="text-neutral-500 text-[13px] leading-relaxed max-w-md mx-auto">
-            🛡️ Pagamento 100% seguro. O pix será identificado no nome de <span className="font-bold text-neutral-800">ITALLO FERNANDES AQUINO</span>, responsável financeiro da Páscoa Lucrativa.
+            🛡️ Pagamento 100% seguro. O pix será identificado no nome de <span className="font-bold text-neutral-800">{SITE_CONFIG.responsibleParty}</span>, responsável financeiro da Páscoa Lucrativa.
           </p>
         </div>
       </div>

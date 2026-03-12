@@ -1,5 +1,6 @@
 import { Lock, ShieldCheck, Zap } from "lucide-react";
 import CTAButton from "./CTAButton";
+import { SITE_CONFIG } from "@/config/site";
 
 const HeroSection = () => {
   return (
