@@ -5,9 +5,6 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,16 +19,22 @@ jobs:
       - name: Build do projeto
         run: npm run build
 
-      - name: Deploy para branch production
+      - name: Instala lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Debug caminhos FTP
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          cd dist
-          echo "Conteúdo da pasta dist antes do commit:"
-          ls -la
-          git init
-          git add -A
-          git commit -m "deploy"
-          git branch -M production
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ItalloAquino/p-scoa-lucrativa-receitas-e-lucros.git
-          git push -f origin production
+          lftp -d -e "
+            set ssl:verify-certificate no;
+            set ftp:passive-mode yes;
+            set net:timeout 10;
+            open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
+            ls -la;
+            echo '---';
+            ls -la public_html;
+            echo '---';
+            ls -la www;
+            echo '---';
+            ls -la Www;
+            quit
+          " 2>&1 || true
