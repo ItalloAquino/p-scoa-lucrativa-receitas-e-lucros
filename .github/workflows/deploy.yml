@@ -29,16 +29,18 @@ jobs:
             set ftp:passive-mode yes;
             set net:timeout 10;
             set net:max-retries 1;
-            set net:reconnect-interval-multiplier 1;
             open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-            pwd;
-            echo '--- Raiz ---';
-            ls -la;
-            echo '--- Tentando www ---';
-            cd www && ls -la && cd .. || echo 'www não acessível';
-            echo '--- Tentando Www ---';
-            cd Www && ls -la && cd .. || echo 'Www não acessível';
-            echo '--- Tentando public_html ---';
-            cd public_html && ls -la && cd .. || echo 'public_html não acessível';
+            echo '--- Listando Raiz Absoluta (/) ---';
+            ls -la / || echo 'Não foi possível listar /';
+            echo '--- Listando . (Atual) ---';
+            ls -la . ;
+            echo '--- Tentando subir um nível ---';
+            cd .. && pwd && ls -la && cd - || echo 'Não foi possível subir';
+            echo '--- Listando caminhos comuns (Absoluto) ---';
+            ls -la /www || echo '/www não existe';
+            ls -la /public_html || echo '/public_html não existe';
+            ls -la /Www || echo '/Www não existe';
+            echo '--- Busca Recursiva (Pode falhar se houver muitos arquivos) ---';
+            ls -R || echo 'LS recursivo falhou';
             quit
           " 2>&1 || true
