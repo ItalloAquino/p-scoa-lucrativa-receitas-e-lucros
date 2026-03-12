@@ -26,12 +26,21 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          
+          echo "Prepando os arquivos no diretório dist..."
           cd dist
-          echo "Verificando arquivos no dist antes do commit:"
-          ls -la
+          
+          echo "Conteúdo de dist antes do deploy:"
+          ls -R
+          
+          echo "Inicializando repositório temporário para o branch production..."
           git init
           git add -A
-          git commit -m "deploy [skip ci]"
+          git commit -m "deploy: atualizando produção [skip ci]"
           git branch -M production
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ItalloAquino/p-scoa-lucrativa-receitas-e-lucros.git
+          
+          echo "Enviando para o branch production do GitHub..."
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git push -f origin production
+          
+          echo "Deploy concluído com sucesso!"
