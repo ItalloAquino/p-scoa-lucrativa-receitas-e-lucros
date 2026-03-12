@@ -22,25 +22,12 @@ jobs:
       - name: Instala lftp
         run: sudo apt-get install -y lftp
 
-      - name: Debug caminhos FTP
+      - name: Deploy via FTP
         run: |
-          lftp -d -e "
+          lftp -e "
             set ssl:verify-certificate no;
             set ftp:passive-mode yes;
-            set net:timeout 10;
-            set net:max-retries 1;
             open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-            echo '--- Listando Raiz Absoluta (/) ---';
-            ls -la / || echo 'Não foi possível listar /';
-            echo '--- Listando . (Atual) ---';
-            ls -la . ;
-            echo '--- Tentando subir um nível ---';
-            cd .. && pwd && ls -la && cd - || echo 'Não foi possível subir';
-            echo '--- Listando caminhos comuns (Absoluto) ---';
-            ls -la /www || echo '/www não existe';
-            ls -la /public_html || echo '/public_html não existe';
-            ls -la /Www || echo '/Www não existe';
-            echo '--- Busca Recursiva (Pode falhar se houver muitos arquivos) ---';
-            ls -R || echo 'LS recursivo falhou';
+            mirror -R --delete --verbose ./dist/ www;
             quit
-          " 2>&1 || true
+          "
