@@ -28,13 +28,17 @@ jobs:
             set ssl:verify-certificate no;
             set ftp:passive-mode yes;
             set net:timeout 10;
+            set net:max-retries 1;
+            set net:reconnect-interval-multiplier 1;
             open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
+            pwd;
+            echo '--- Raiz ---';
             ls -la;
-            echo '---';
-            ls -la public_html;
-            echo '---';
-            ls -la www;
-            echo '---';
-            ls -la Www;
+            echo '--- Tentando www ---';
+            cd www && ls -la && cd .. || echo 'www não acessível';
+            echo '--- Tentando Www ---';
+            cd Www && ls -la && cd .. || echo 'Www não acessível';
+            echo '--- Tentando public_html ---';
+            cd public_html && ls -la && cd .. || echo 'public_html não acessível';
             quit
           " 2>&1 || true
