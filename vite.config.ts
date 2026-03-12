@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => ({
     {
       name: "generate-htaccess",
       closeBundle() {
+        console.log("Generating .htaccess files...");
         // .htaccess raiz — roteamento React
         writeFileSync(
           "dist/.htaccess",
@@ -30,6 +31,7 @@ RewriteRule ^ index.html [QSA,L]
 AddType application/javascript .js .mjs
 AddType text/css .css`.trim()
         );
+        console.log("Root .htaccess generated.");
 
         // .htaccess assets — MIME types
         mkdirSync("dist/assets", { recursive: true });
@@ -42,6 +44,7 @@ AddType text/css .css`.trim()
     ForceType text/css
 </FilesMatch>`.trim()
         );
+        console.log("Assets .htaccess generated.");
       },
     },
   ].filter(Boolean),

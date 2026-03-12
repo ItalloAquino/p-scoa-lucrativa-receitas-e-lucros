@@ -27,8 +27,10 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           cd dist
+          echo "Conteúdo da pasta dist antes do commit:"
+          ls -la
           git init
-          git add .
+          git add -A
           git commit -m "deploy"
           git branch -M production
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ItalloAquino/p-scoa-lucrativa-receitas-e-lucros.git
