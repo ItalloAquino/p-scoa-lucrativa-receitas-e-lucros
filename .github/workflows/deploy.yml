@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,23 +22,14 @@ jobs:
       - name: Build do projeto
         run: npm run build
 
-      - name: Instala lftp
-        run: sudo apt-get install -y lftp
-
-      - name: Deploy via FTP
+      - name: Deploy para branch production
         run: |
-          lftp -e "
-            set ssl:verify-certificate no;
-            set ftp:passive-mode yes;
-            set ftp:list-options -a;
-            open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-            echo '--- Listando Root (/) ---';
-            ls -la / || echo 'Falha ao listar /';
-            echo '--- Listando Atual (.) ---';
-            ls -la . || echo 'Falha ao listar .';
-            echo '--- Tentando Mirror para /www ---';
-            mirror -R --delete --verbose ./dist/ /www || echo 'Mirror para /www falhou';
-            echo '--- Tentando Mirror para www (relativo) ---';
-            mirror -R --delete --verbose ./dist/ www || echo 'Mirror para www falhou';
-            quit
-          " 2>&1 || true
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          cd dist
+          git init
+          git add .
+          git commit -m "deploy [skip ci]"
+          git branch -M production
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ItalloAquino/p-scoa-lucrativa-receitas-e-lucros.git
+          git push -f origin production
