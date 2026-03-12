@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Instala dependências
         run: npm install
@@ -24,10 +22,14 @@ jobs:
       - name: Build do projeto
         run: npm run build
 
-      - name: Commit do dist
+      - name: Deploy para branch production
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add dist/ -f
-          git commit -m "build: atualiza dist [skip ci]" || echo "Nada para commitar"
-          git push
+          cd dist
+          git init
+          git add .
+          git commit -m "deploy"
+          git branch -M production
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ItalloAquino/p-scoa-lucrativa-receitas-e-lucros.git
+          git push -f origin production
