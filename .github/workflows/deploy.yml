@@ -30,8 +30,11 @@ jobs:
           echo "Prepando os arquivos no diretório dist..."
           cd dist
           
-          echo "Conteúdo de dist antes do deploy:"
-          ls -R
+          echo "Conteúdo de dist antes do deploy (incluindo arquivos ocultos):"
+          ls -laR
+          
+          if [ -f .htaccess ]; then echo "✅ .htaccess encontrado na raiz"; else echo "❌ .htaccess NÃO ENCONTRADO na raiz"; fi
+          if [ -f assets/.htaccess ]; then echo "✅ assets/.htaccess encontrado"; else echo "❌ assets/.htaccess NÃO ENCONTRADO"; fi
           
           echo "Inicializando repositório temporário para o branch production..."
           git init
