@@ -28,7 +28,10 @@ jobs:
             set ssl:verify-certificate no;
             set ftp:passive-mode yes;
             open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-            ls;
+            pwd;
+            ls -la;
+            cd /;
+            ls -la;
             quit
           "
 
