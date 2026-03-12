@@ -23,8 +23,11 @@ export default defineConfig(({ mode }) => ({
         // .htaccess raiz — roteamento React
         writeFileSync(
           "dist/.htaccess",
-          `Options -MultiViews
-RewriteEngine On
+          `RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+Options -MultiViews
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
 
