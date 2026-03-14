@@ -16,7 +16,7 @@ const UrgencyBar = () => {
   return (
     <div className="bg-cta-orange py-2.5 px-4 text-center">
       <p className="text-sm md:text-base font-semibold text-accent-foreground font-body flex items-center justify-center gap-2 flex-wrap">
-        <span>⚠️ Oferta especial por tempo limitado — Garanta agora por apenas R$27</span>
+        <span>⚠️ Oferta especial por tempo limitado — Garanta agora por apenas R$19,90</span>
         <span className="inline-flex items-center bg-chocolate/30 rounded-md px-3 py-0.5 font-mono text-accent-foreground tabular-nums">
           {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
         </span>

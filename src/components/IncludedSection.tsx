@@ -23,7 +23,7 @@ const IncludedSection = () => {
       (window as any).fbq("track", "InitiateCheckout", {
         content_name: SITE_CONFIG.title,
         content_category: "Ebook/Course",
-        value: 27.00,
+        value: 19.90,
         currency: "BRL"
       });
       console.log("Facebook Pixel: InitiateCheckout event tracked");
@@ -68,19 +68,19 @@ const IncludedSection = () => {
 
           {/* 5. Seção de Preço */}
           <div className="text-center mb-8">
-            <span className="text-sm line-through opacity-70">De: R$ 147,00</span>
+            <span className="text-sm line-through opacity-70">De: R$ 67,00</span>
             <p className="text-base mt-2">Por apenas:</p>
             <div className="text-5xl md:text-6xl font-extrabold text-[#7CFF00] mt-2">
-              R$27,00
+              R$19,90
             </div>
             <p className="text-sm mt-2 opacity-90">
-              ou 3x R$ 9,64 no cartão
+              ou 3x R$ 7,10 no cartão
             </p>
           </div>
 
           {/* 6. Frase Persuasiva */}
           <p className="text-center text-sm italic opacity-90 mb-8">
-            Tudo isso por apenas R$27 — menos que um ovo industrializado de supermercado.
+            Tudo isso por apenas R$19,90 — menos que um ovo industrializado de supermercado.
           </p>
 
           {/* 7. Botão CTA */}
@@ -88,7 +88,7 @@ const IncludedSection = () => {
             onClick={handleCTA}
             className="w-full bg-[#FF5A1F] hover:bg-[#E14E1B] transition duration-300 text-white font-bold uppercase tracking-wide py-4 rounded-xl shadow-lg text-lg transform hover:scale-[1.02] active:scale-95"
           >
-            QUERO COMEÇAR AGORA — R$27 →
+            QUERO COMEÇAR AGORA — R$19,90 →
           </button>
 
           {/* 8. Ícones de Pagamento */}

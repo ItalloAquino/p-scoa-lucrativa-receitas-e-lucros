@@ -170,21 +170,21 @@ const Quiz = ({ onComplete }: { onComplete?: () => void }) => {
             return {
                 icon: <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-gold animate-pulse" />,
                 title: "🔥 Você Nasceu Pra Isso. Só Faltava a Receita Certa.",
-                message: "Tudo indica que esse é o momento. A motivação está acesa, a necessidade é real e a Páscoa está chegando. O Pack Páscoa Lucrativa foi feito exatamente pra esse perfil — e por R$27 não existe razão pra adiar.",
+                message: "Tudo indica que esse é o momento. A motivação está acesa, a necessidade é real e a Páscoa está chegando. O Pack Páscoa Lucrativa foi feito exatamente pra esse perfil — e por R$19,90 não existe razão pra adiar.",
                 cta: "Ver Como Posso Lucrar Nessa Páscoa"
             };
         } else if (totalScore >= 9) {
             return {
                 icon: <Rocket className="w-10 h-10 md:w-12 md:h-12 text-gold" />,
                 title: "🍫 Uma Decisão Separa Você de Uma Páscoa Completamente Diferente.",
-                message: "Já tem motivação e potencial — só precisa das receitas certas e de um passo de confiança. Mais de 10 receitas gourmet em vídeo, do básico ao sofisticado, por apenas R$27.",
+                message: "Já tem motivação e potencial — só precisa das receitas certas e de um passo de confiança. Mais de 10 receitas gourmet em vídeo, do básico ao sofisticado, por apenas R$19,90.",
                 cta: "Ver Como Posso Lucrar Nessa Páscoa"
             };
         } else {
             return {
                 icon: <Heart className="w-10 h-10 md:w-12 md:h-12 text-gold" />,
                 title: "🌱 A Semente Já Está Plantada. Só Falta Regar.",
-                message: "Talvez ainda esteja avaliando — e tudo bem. Mas a Páscoa não espera. Com mais de 10 receitas exclusivas em vídeo o aprendizado é simples e direto. Por R$27 o risco é mínimo e a oportunidade é enorme.",
+                message: "Talvez ainda esteja avaliando — e tudo bem. Mas a Páscoa não espera. Com mais de 10 receitas exclusivas em vídeo o aprendizado é simples e direto. Por R$19,90 o risco é mínimo e a oportunidade é enorme.",
                 cta: "Ver Como Posso Lucrar Nessa Páscoa"
             };
         }

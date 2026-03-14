@@ -19,12 +19,12 @@ const FinalCTASection = () => {
             ♾️ Acesso vitalício — pague uma vez e assista para sempre
           </p>
 
-          <p className="text-cream/50 font-body text-sm line-through mb-1">De R$147</p>
+          <p className="text-cream/50 font-body text-sm line-through mb-1">De R$67</p>
           <p className="text-[4rem] sm:text-[5rem] font-bold text-cta-orange mb-1 font-display leading-none">
-            R$<span>27</span>
+            R$<span>19,90</span>
           </p>
           <p className="text-cream/60 font-body text-sm mb-8">
-            ou 3x de R$9,64 no cartão
+            ou 3x de R$7,10 no cartão
           </p>
 
           <CTAButton />
