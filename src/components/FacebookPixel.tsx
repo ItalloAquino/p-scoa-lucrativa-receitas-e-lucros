@@ -42,7 +42,7 @@ const FacebookPixel = () => {
             const params = new URLSearchParams(window.location.search);
             if (params.get("activate") === "purchase") {
                 (window as any).fbq("track", "Purchase", {
-                    value: 27.00,
+                    value: 19.90,
                     currency: "BRL",
                     content_name: "DIAGNOSTIC_PURCHASE_ACTIVATION"
                 });

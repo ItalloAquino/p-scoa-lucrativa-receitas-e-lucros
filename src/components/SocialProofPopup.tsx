@@ -76,7 +76,7 @@ const SocialProofPopup = () => {
           {buyer.name} — {buyer.city}
         </p>
         <p className="font-body text-foreground/70 text-xs mt-1">
-          acabou de garantir por R$27 e vai lucrar muito nessa Páscoa! 🔥
+          acabou de garantir por R$19,90 e vai lucrar muito nessa Páscoa! 🔥
         </p>
         <p className="font-body text-foreground/40 text-[11px] mt-1.5">
           há {randomMin} minutos
