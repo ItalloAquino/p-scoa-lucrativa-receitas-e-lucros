@@ -1,4 +1,5 @@
 import { toast } from "sonner";
+import { SITE_CONFIG } from "@/config/site";
 
 const CTAButton = () => {
   const handleClick = () => {
@@ -10,10 +11,7 @@ const CTAButton = () => {
       console.log("Facebook Pixel: ClickToOffer event tracked");
     }
 
-    const element = document.getElementById("pricing-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    window.location.href = SITE_CONFIG.hotmartCheckoutUrl;
   };
 
   return (

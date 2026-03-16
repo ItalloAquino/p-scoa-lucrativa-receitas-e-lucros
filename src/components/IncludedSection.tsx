@@ -29,7 +29,7 @@ const IncludedSection = () => {
       console.log("Facebook Pixel: InitiateCheckout event tracked");
     }
 
-    window.open(SITE_CONFIG.hotmartCheckoutUrl, "_blank");
+    window.location.href = SITE_CONFIG.hotmartCheckoutUrl;
   };
 
   return (
