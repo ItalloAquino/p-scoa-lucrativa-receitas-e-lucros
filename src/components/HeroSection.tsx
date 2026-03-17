@@ -11,12 +11,12 @@ const HeroSection = () => {
 
       <div className="container-narrow relative z-10 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6">
-          Não São Receitas Qualquer.{" "}
-          <span className="text-gold-light">São as Que Geram R$800 a R$2.000 Nessa Páscoa</span>
+          Como Pessoas Comuns Estão Fazendo Até R$2.000 em 7 Dias{" "}
+          <span className="text-gold-light">Vendendo Ovos de Páscoa Caseiros (Mesmo Sem Experiência)</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-cream/80 mb-8 max-w-2xl mx-auto font-body leading-relaxed">
-          Um pack exclusivo com mais de 10 receitas gourmet mais lucrativas da temporada — do básico ao sofisticado — para você produzir em casa, encantar clientes e lucrar de verdade. Mesmo começando do zero.
+          Um passo a passo simples com as receitas exatas que mais vendem, + como precificar, divulgar e transformar ingredientes baratos em lucro real — mesmo começando do zero e com pouco dinheiro.
         </p>
 
         <CTAButton />
