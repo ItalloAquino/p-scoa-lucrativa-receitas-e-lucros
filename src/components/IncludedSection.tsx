@@ -19,17 +19,21 @@ const paymentMethods = [
 const IncludedSection = () => {
   const handleCTA = () => {
     // Track InitiateCheckout event
+    const eventId = "init_checkout_" + new Date().getTime();
     if ((window as any).fbq) {
       (window as any).fbq("track", "InitiateCheckout", {
         content_name: SITE_CONFIG.title,
         content_category: "Ebook/Course",
         value: 19.90,
         currency: "BRL"
-      });
-      console.log("Facebook Pixel: InitiateCheckout event tracked");
+      }, { eventID: eventId });
+      console.log("Facebook Pixel: InitiateCheckout event tracked with eventID:", eventId);
     }
 
-    window.location.href = SITE_CONFIG.hotmartCheckoutUrl;
+    // Add a small delay to ensure the pixel event is sent before navigating away
+    setTimeout(() => {
+      window.location.href = SITE_CONFIG.hotmartCheckoutUrl;
+    }, 400);
   };
 
   return (
