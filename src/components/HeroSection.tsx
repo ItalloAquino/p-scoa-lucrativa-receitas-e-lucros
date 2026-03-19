@@ -32,22 +32,6 @@ const HeroSection = () => {
             <ShieldCheck size={14} /> Garantia de 7 dias
           </span>
         </div>
-
-        {/* Vertical Video Embed */}
-        <div className="mt-12 max-w-[320px] mx-auto">
-          <div className="bg-chocolate-medium rounded-xl p-3 shadow-2xl border border-gold/20">
-            <div className="bg-black rounded-lg overflow-hidden relative" style={{ padding: "177.78% 0 0 0" }}>
-              <iframe
-                src="https://player.vimeo.com/video/1169377949?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                title="New Project"
-              ></iframe>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
